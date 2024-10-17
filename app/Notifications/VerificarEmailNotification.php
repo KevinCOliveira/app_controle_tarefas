@@ -69,9 +69,9 @@ class VerificarEmailNotification extends Notification
         return (new MailMessage)
             ->subject('Confirmação de e-mail')
             ->greeting('Olá '.$this->name)
-            ->line('Clique no botão abaico para validar seu e-mail')
+            ->line('Clique no botão abaixo para validar seu e-mail')
             ->action('Clique aqui para validar seu e-mail', $url)
-            ->line(Lang::get('Caso você não tenha se cadastrado em nosso sistema, apenas desconsidere essa mensagem.'));
+            ->line('Caso você não tenha se cadastrado em nosso sistema, apenas desconsidere essa mensagem.');
     }
 
     /**

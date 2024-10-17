@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Notification\VerificarEmailNotification;
+use App\Notifications\VerificarEmailNotification;
 use App\Notifications\RedefinirSenhaNotification;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
