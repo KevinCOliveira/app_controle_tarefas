@@ -19,13 +19,10 @@ class TarefaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-            $id = auth()->user()->id;
-            $name = auth()->user()->name;
-            $email = auth()->user()->email;
-            $password = auth()->user()->password;
-            
-            return "ID:$id | Nome:$name | E-mail:$email";
+    {   
+        $user_id= auth()->user()->id;
+        $tarefas = Tarefa::where('user_id',$user_id)->get();
+        return view('tarefa.index',['tarefas'=> $tarefas]);
 
         // if (Auth::check()){
         //     $id = Auth::user()->id;
@@ -70,7 +67,10 @@ class TarefaController extends Controller
      */
     public function store(Request $request)
     {
-        $tarefa = Tarefa::create($request->all());
+        $dados = $request->all('tarefa', 'data_limite_conclusao');
+        $dados['user_id'] = auth()->user()->id;
+
+        $tarefa = Tarefa::create($dados);
 
         $destinatario = auth()->user()->email;//e-mail do usuário logado (autenticado)
 

@@ -26,6 +26,9 @@ class AlterTableTarefasRelacionamentoUsers extends Migration
      */
     public function down()
     {
-        Schema::table('tarefas', function(Blueprint $table ))
+        Schema::table('tarefas', function(Blueprint $table){
+            $table->dropForeign('tarefas_user_id_foreign');
+            $table->dropColumn('user_id');
+        });
     }
 }
