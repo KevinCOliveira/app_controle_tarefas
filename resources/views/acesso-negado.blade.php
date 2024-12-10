@@ -8,13 +8,7 @@
                 <div class="card-header">Acesso negado</div>
 
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            Desculpe. Você não tem acesso a esse recurso.
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
+                            Desculpe. Você não tem acesso a esse recurso. 
                 </div>
             </div>
         </div>
